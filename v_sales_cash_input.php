@@ -654,12 +654,8 @@ function pay(){
 					  function () {},
 					  // handling the promise rejection
 					  function (dismiss) {
-					//if (dismiss === 'timer') {
-						
-						//loadPrintPage(data.id);
-						//$("#iframe_print").hide();
-						//var kembalian = $("#kembali").val();
-						if( (total_byr-gt) > 0){ // jika total kemabalian > 0
+						// jika total kemabalian > 0
+						if( (total_byr-gt) > 0){ 
 						 swal({
 							  title: "TOTAL KEMBALIAN: "+accounting.format((total_byr-gt),2)+"", text: "", type: "info", 
 							  showConfirmButton: true,
@@ -671,7 +667,7 @@ function pay(){
 									var url = "<?php echo site_url('sales/cash/view'); ?>/" + data.id;
 								<?php } ?>
 								window.location = url;	
-							  },
+							  }
 							)
 						}else{
 							<?php if($menu->CUSTOM2=='Y'){  ?>
@@ -681,7 +677,7 @@ function pay(){
 							<?php } ?>
 							window.location = url;	
 						}
-						//}
+
 					  }
 					)
 				} else if(act == 'edit' || act == 'readonly') {	
@@ -692,8 +688,8 @@ function pay(){
 					  function () {},
 					  // handling the promise rejection
 					  function (dismiss) {
-						
-						if( (total_byr-gt) > 0){ // jika total kemabalian > 0
+						// jika total kemabalian > 0
+						if( (total_byr-gt) > 0){ 
 						 swal({
 							  title: "TOTAL KEMBALIAN: "+accounting.format((total_byr-gt),2)+"", text: "", type: "info", 
 							  showConfirmButton: true,
@@ -701,7 +697,7 @@ function pay(){
 							  function () {
 								var url = "<?php echo site_url('sales/cash/view'); ?>/" + data.id;
 								window.location = url;
-							  },
+							  }
 							)
 						}else{
 							var url = "<?php echo site_url('sales/cash/view'); ?>/" + data.id;
